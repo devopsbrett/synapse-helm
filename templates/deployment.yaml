@@ -63,7 +63,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
-          - generate
+          - migrate_config
           env:
             {{ include "synapse.envVars" . | nindent 12 }}
           volumeMounts:
